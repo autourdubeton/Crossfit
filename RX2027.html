@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Anthony RX 2027&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">*{box-sizing:border-box;margin:0;padding:0}</p>
+<p class="p1">body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding-bottom:30px}</p>
+<p class="p1">.app{max-width:480px;margin:0 auto}</p>
+<p class="p1">.hdr{background:#111;border-bottom:2px solid #f4621f;padding:14px 16px;position:sticky;top:0;z-index:10}</p>
+<p class="p1">.hdr-row{display:flex;justify-content:space-between;align-items:center}</p>
+<p class="p1">.logo{font-size:18px;font-weight:900;letter-spacing:1px}</p>
+<p class="p1">.logo span{color:#f4621f}</p>
+<p class="p1">.phase{background:#f4621f;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:1px}</p>
+<p class="p1">.week-lbl{font-size:11px;color:#888;margin-top:4px}</p>
+<p class="p1">.nav{display:flex;background:#111;border-bottom:1px solid #2a2a2a;position:sticky;top:62px;z-index:9}</p>
+<p class="p1">.nav-btn{flex:1;padding:11px 4px;text-align:center;font-size:11px;font-weight:600;color:#666;letter-spacing:0.5px;cursor:pointer;border-bottom:2px solid transparent;border-top:none;border-left:none;border-right:none;background:transparent;transition:all .2s}</p>
+<p class="p1">.nav-btn.on{color:#f4621f;border-bottom:2px solid #f4621f}</p>
+<p class="p1">.view{display:none;padding:14px}</p>
+<p class="p1">.view.on{display:block}</p>
+<p class="p1">.day-card{background:#1a1a1a;border-radius:12px;border:1px solid #2a2a2a;margin-bottom:10px;overflow:hidden}</p>
+<p class="p1">.day-card.today{border-color:#f4621f}</p>
+<p class="p1">.day-hdr{display:flex;align-items:center;padding:12px 14px;gap:10px;cursor:pointer}</p>
+<p class="p1">.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}</p>
+<p class="p1">.dot-wod{background:#f4621f}.dot-renfort{background:#2196f3}.dot-coaching{background:#9c27b0}.dot-teamwod{background:#4caf50}.dot-repos{background:#555}.dot-echobike{background:#00bcd4}</p>
+<p class="p1">.day-nm{font-weight:700;font-size:14px;flex:1}</p>
+<p class="p1">.day-dt{font-size:11px;color:#666}</p>
+<p class="p1">.day-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin-right:4px}</p>
+<p class="p1">.b-wod{background:rgba(244,98,31,.2);color:#f4621f}</p>
+<p class="p1">.b-renfort{background:rgba(33,150,243,.2);color:#2196f3}</p>
+<p class="p1">.b-coaching{background:rgba(156,39,176,.2);color:#ce93d8}</p>
+<p class="p1">.b-teamwod{background:rgba(76,175,80,.2);color:#4caf50}</p>
+<p class="p1">.b-repos{background:rgba(88,88,88,.15);color:#888}</p>
+<p class="p1">.b-echobike{background:rgba(0,188,212,.2);color:#00bcd4}</p>
+<p class="p1">.day-body{padding:0 14px 14px;display:none}</p>
+<p class="p1">.day-body.open{display:block}</p>
+<p class="p1">.day-desc{font-size:13px;color:#bbb;margin-bottom:12px;line-height:1.5}</p>
+<p class="p1">.btn-grp{display:flex;gap:8px}</p>
+<p class="p1">.btn-done{flex:1;padding:9px;border-radius:8px;border:1px solid #4caf50;background:rgba(76,175,80,.15);color:#4caf50;font-size:12px;font-weight:700;cursor:pointer}</p>
+<p class="p1">.btn-skip{flex:1;padding:9px;border-radius:8px;border:1px solid #f44336;background:rgba(244,67,54,.15);color:#f44336;font-size:12px;font-weight:700;cursor:pointer}</p>
+<p class="p1">.btn-done.active{background:#4caf50;color:#fff}</p>
+<p class="p1">.btn-skip.active{background:#f44336;color:#fff}</p>
+<p class="p1">.sec-title{font-size:10px;font-weight:700;color:#666;letter-spacing:2px;text-transform:uppercase;margin:16px 0 8px}</p>
+<p class="p1">.ex-card{background:#1a1a1a;border-radius:12px;padding:14px;border:1px solid #2a2a2a;margin-bottom:10px}</p>
+<p class="p1">.ex-card.prio{border-color:#f4621f}</p>
+<p class="p1">.ex-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}</p>
+<p class="p1">.ex-nm{font-size:15px;font-weight:700}</p>
+<p class="p1">.ex-tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(244,98,31,.2);color:#f4621f}</p>
+<p class="p1">.ex-desc{font-size:12px;color:#888;margin-bottom:10px;line-height:1.5}</p>
+<p class="p1">.set-row{display:flex;align-items:center;gap:8px;background:#222;border-radius:8px;padding:8px 10px;margin-bottom:5px}</p>
+<p class="p1">.set-num{font-size:11px;color:#666;font-weight:600;width:36px;flex-shrink:0}</p>
+<p class="p1">.set-tgt{font-size:13px;flex:1;color:#ddd}</p>
+<p class="p1">.set-inp{background:#2a2a2a;border:1px solid #333;border-radius:6px;color:#f0f0f0;font-size:13px;padding:4px 6px;width:65px;text-align:center}</p>
+<p class="p1">.set-inp:focus{outline:none;border-color:#f4621f}</p>
+<p class="p1">.set-chk{width:22px;height:22px;border-radius:6px;border:2px solid #444;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;transition:all .15s;color:transparent;user-select:none}</p>
+<p class="p1">.set-chk.chk{background:#4caf50;border-color:#4caf50;color:#fff}</p>
+<p class="p1">.rest{font-size:11px;color:#666;margin-top:6px;font-style:italic}</p>
+<p class="p1">.z2-card{background:#0a2530;border:1px solid #00bcd4;border-radius:12px;padding:14px;margin-bottom:10px}</p>
+<p class="p1">.z2-title{font-size:14px;font-weight:700;color:#00bcd4;margin-bottom:5px}</p>
+<p class="p1">.z2-desc{font-size:12px;color:#9ecdd4;line-height:1.5;margin-bottom:10px}</p>
+<p class="p1">.z2-stats{display:flex;gap:10px}</p>
+<p class="p1">.z2-stat{flex:1;background:rgba(0,188,212,.1);border-radius:8px;padding:8px;text-align:center}</p>
+<p class="p1">.z2-val{font-size:18px;font-weight:900;color:#00bcd4}</p>
+<p class="p1">.z2-lbl{font-size:10px;color:#667;margin-top:2px}</p>
+<p class="p1">.prog-card{background:#1a1a1a;border-radius:12px;padding:14px;border:1px solid #2a2a2a;margin-bottom:10px}</p>
+<p class="p1">.pb-wrap{margin-bottom:10px}</p>
+<p class="p1">.pb-labels{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:4px}</p>
+<p class="p1">.pb{height:6px;background:#2a2a2a;border-radius:3px;overflow:hidden}</p>
+<p class="p1">.pb-fill{height:100%;border-radius:3px;background:#f4621f}</p>
+<p class="p1">.pb-fill.blue{background:#2196f3}</p>
+<p class="p1">.pb-fill.green{background:#4caf50}</p>
+<p class="p1">.pb-fill.cyan{background:#00bcd4}</p>
+<p class="p1">.rm-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #222;font-size:13px}</p>
+<p class="p1">.rm-row:last-child{border-bottom:none}</p>
+<p class="p1">.rm-lbl{color:#999}</p>
+<p class="p1">.rm-val{font-weight:700;color:#f4621f}</p>
+<p class="p1">.action-btn{width:100%;padding:12px;border-radius:10px;border:1px solid #f4621f;background:rgba(244,98,31,.1);color:#f4621f;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="app"&gt;</p>
+<p class="p1">&lt;div class="hdr"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hdr-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="logo"&gt;ANTHONY &lt;span&gt;RX&lt;/span&gt; 2027&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="phase"&gt;PHASE BASE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="week-lbl"&gt;Semaine 1 — 17 au 22 mars 2026&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">&lt;div class="nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="nav-btn on" onclick="show('semaine',this)"&gt;SEMAINE&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="nav-btn" onclick="show('seance',this)"&gt;SÉANCE&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="nav-btn" onclick="show('prog',this)"&gt;PROGRESSION&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="nav-btn" onclick="show('profil',this)"&gt;PROFIL&lt;/button&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="semaine" class="view on"&gt;&lt;div id="week-grid"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;div id="seance" class="view"&gt;&lt;div id="seance-content"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="prog" class="view"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="prog-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="font-size:13px;font-weight:700;margin-bottom:12px"&gt;Plan 6 mois — Phase Base (semaine 1/8)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pb-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb-labels"&gt;&lt;span&gt;Phase Base&lt;/span&gt;&lt;span&gt;1/8 sem.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb"&gt;&lt;div class="pb-fill" style="width:12%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pb-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb-labels"&gt;&lt;span&gt;Plan global&lt;/span&gt;&lt;span&gt;1/26 sem.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb"&gt;&lt;div class="pb-fill" style="width:4%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sec-title"&gt;Objectifs 6 mois&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="prog-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pb-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb-labels"&gt;&lt;span&gt;Front Squat 85 kg → 100 kg&lt;/span&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb"&gt;&lt;div class="pb-fill" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pb-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb-labels"&gt;&lt;span&gt;Thruster ~60 kg → 75 kg&lt;/span&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb"&gt;&lt;div class="pb-fill blue" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pb-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb-labels"&gt;&lt;span&gt;BMU unbroken 3 → 10 reps&lt;/span&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb"&gt;&lt;div class="pb-fill green" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pb-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb-labels"&gt;&lt;span&gt;Zone 2 — 2 séances/sem.&lt;/span&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pb"&gt;&lt;div class="pb-fill cyan" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="profil" class="view"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sec-title"&gt;1RM de référence&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="prog-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Back Squat&lt;/span&gt;&lt;span class="rm-val"&gt;101 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Front Squat&lt;/span&gt;&lt;span class="rm-val"&gt;85 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Deadlift&lt;/span&gt;&lt;span class="rm-val"&gt;137 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Clean &amp; Jerk&lt;/span&gt;&lt;span class="rm-val"&gt;68 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Squat Clean&lt;/span&gt;&lt;span class="rm-val"&gt;70 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Push Press&lt;/span&gt;&lt;span class="rm-val"&gt;63 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Bench Press&lt;/span&gt;&lt;span class="rm-val"&gt;88 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Thruster (estimé)&lt;/span&gt;&lt;span class="rm-val"&gt;~60 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Strict Press (estimé)&lt;/span&gt;&lt;span class="rm-val"&gt;~50 kg&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sec-title"&gt;Gymnastics&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="prog-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;BMU unbroken record&lt;/span&gt;&lt;span class="rm-val"&gt;3 reps&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Pull-ups&lt;/span&gt;&lt;span class="rm-val"&gt;✓&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Chest-to-bar&lt;/span&gt;&lt;span class="rm-val"&gt;✓&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Toes-to-bar&lt;/span&gt;&lt;span class="rm-val"&gt;✓&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Handstand walk&lt;/span&gt;&lt;span class="rm-val"&gt;2–3 m&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rm-row"&gt;&lt;span class="rm-lbl"&gt;Double-unders&lt;/span&gt;&lt;span class="rm-val"&gt;Sets 20–30&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const DAYS=[</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:'lun',name:'Lundi',date:'17 mars',type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',done:true,today:false,</p>
+<p class="p1"><span class="Apple-converted-space">   </span>desc:'WOD du matin (7h avant déplacement). Fait !'},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:'mar',name:'Mardi',date:'18 mars',type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',done:true,today:false,</p>
+<p class="p1"><span class="Apple-converted-space">   </span>desc:'WOD 17h15 — 3 rounds : 400m run / 3 BMU / 21 DB snatch @ 17,5 kg. Temps : 13\'26. + 3 BMU unbroken en fin de séance !'},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:'mer',name:'Mercredi',date:'19 mars',type:'renfort',badge:'b-renfort',dot:'dot-renfort',label:'Renfort',done:false,today:true,</p>
+<p class="p1"><span class="Apple-converted-space">   </span>desc:'Séance renfort : Front Squat 5×5 @ 55 kg + Thruster technique + Strict Press + accessoire BMU. Voir onglet SÉANCE.'},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:'jeu',name:'Jeudi',date:'20 mars',type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',done:false,today:false,</p>
+<p class="p1"><span class="Apple-converted-space">   </span>desc:'WOD box. Note ton ressenti et tes zones FC après pour adapter la suite.'},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:'ven',name:'Vendredi',date:'21 mars',type:'coaching',badge:'b-coaching',dot:'dot-coaching',label:'Cours particulier',done:false,today:false,</p>
+<p class="p1"><span class="Apple-converted-space">   </span>desc:'Cours particulier. Focus suggéré : technique thruster + cycling BMU.'},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{id:'sam',name:'Samedi',date:'22 mars',type:'teamwod',badge:'b-teamwod',dot:'dot-teamwod',label:'Team WOD',done:false,today:false,</p>
+<p class="p1"><span class="Apple-converted-space">   </span>desc:'Team WOD avec Aurélie. Intensité libre — profite !'},</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const SEANCE={</p>
+<p class="p1"><span class="Apple-converted-space">  </span>title:'Renfort — Mercredi 19 mars',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>phase:'Phase Base · Semaine 1',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>blocks:[</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{title:'ÉCHAUFFEMENT',exercises:[</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Echo bike zone 2',tag:null,prio:false,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'10 min à FC cible 120–135 bpm. Cadence tranquille.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'—',tgt:'10 min @ 120–135 bpm',inp:false}]}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{title:'BLOC PRINCIPAL — JAMBES',exercises:[</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Front Squat',tag:'PRIORITÉ',prio:true,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'5×5 @ 65% = 55 kg. Repos 3 min. Focus : coudes hauts, profondeur.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'Set 1',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 2',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 3',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 4',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 5',tgt:'5 reps @ 55 kg',inp:true}],</p>
+<p class="p1"><span class="Apple-converted-space">       </span>rest:'Repos 3 min entre sets'},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Thruster technique',tag:null,prio:false,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'4×4 @ 30 kg. Pas lourd — focus enchaînement squat→presse.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'Set 1',tgt:'4 reps @ 30 kg',inp:true},{num:'Set 2',tgt:'4 reps @ 30 kg',inp:true},{num:'Set 3',tgt:'4 reps @ 30 kg',inp:true},{num:'Set 4',tgt:'4 reps @ 30 kg',inp:true}],</p>
+<p class="p1"><span class="Apple-converted-space">       </span>rest:'Repos 2 min entre sets'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{title:'POUSSÉE VERTICALE',exercises:[</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Strict Press',tag:null,prio:false,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'4×6 @ 60% = 30 kg. Mouvement strict, pas de coup de rein.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'Set 1',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 2',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 3',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 4',tgt:'6 reps @ 30 kg',inp:true}],</p>
+<p class="p1"><span class="Apple-converted-space">       </span>rest:'Repos 90 sec entre sets'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{title:'ACCESSOIRE BMU',exercises:[</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Transitions BMU',tag:null,prio:false,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'5×3 transitions isolées. Travail du passage hanche → appui. Si tu te sens bien, tente 3 BMU unbroken en fin de bloc.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'Set 1',tgt:'3 transitions',inp:false},{num:'Set 2',tgt:'3 transitions',inp:false},{num:'Set 3',tgt:'3 transitions',inp:false},{num:'Set 4',tgt:'3 transitions',inp:false},{num:'Set 5',tgt:'3 transitions',inp:false}],</p>
+<p class="p1"><span class="Apple-converted-space">       </span>rest:'Repos 90 sec — qualité avant tout'},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Hollow body hold',tag:null,prio:false,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'3×30 sec. Core pour soutenir les BMU.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'Set 1',tgt:'30 sec',inp:false},{num:'Set 2',tgt:'30 sec',inp:false},{num:'Set 3',tgt:'30 sec',inp:false}],</p>
+<p class="p1"><span class="Apple-converted-space">       </span>rest:'Repos 45 sec'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{title:'ZONE 2 — FINISHER',exercises:[</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{name:'Echo bike',tag:null,prio:false,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>desc:'15–20 min @ 120–135 bpm. Récupération active.',</p>
+<p class="p1"><span class="Apple-converted-space">       </span>sets:[{num:'—',tgt:'15–20 min @ zone 2',inp:false}]}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>]</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">function show(id,btn){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.view').forEach(v=&gt;v.classList.remove('on'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.nav-btn').forEach(b=&gt;b.classList.remove('on'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById(id).classList.add('on');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.classList.add('on');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function toggleDay(id){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('body-'+id).classList.toggle('open');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function markDay(id,status){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const d=document.getElementById('dbtn-'+id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const s=document.getElementById('sbtn-'+id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const dot=document.getElementById('dot-'+id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(status==='done'){d.classList.add('active');s.classList.remove('active');dot.style.boxShadow='0 0 0 2px #4caf50';}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else{s.classList.add('active');d.classList.remove('active');dot.style.boxShadow='0 0 0 2px #f44336';}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>localStorage.setItem('day-'+id,status);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function toggleCheck(el){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.toggle('chk');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.textContent=el.classList.contains('chk')?'✓':'';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function buildWeek(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const grid=document.getElementById('week-grid');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>DAYS.forEach(d=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const saved=localStorage.getItem('day-'+d.id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const isDone=saved==='done'||d.done;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const isSkip=saved==='skip';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const card=document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>card.className='day-card'+(d.today?' today':'');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>card.innerHTML=`</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-hdr" onclick="toggleDay('${d.id}')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="dot ${d.dot}" id="dot-${d.id}" style="${isDone?'box-shadow:0 0 0 2px #4caf50':isSkip?'box-shadow:0 0 0 2px #f44336':''}"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-nm"&gt;${d.name}${d.today?' &lt;span style="font-size:10px;color:#f4621f"&gt;· Aujourd\'hui&lt;/span&gt;':''}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-dt"&gt;${d.date}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="day-badge ${d.badge}"&gt;${d.label}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="font-size:13px"&gt;${isDone?'✅':isSkip?'⏭':'▸'}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-body${d.today?' open':''}" id="body-${d.id}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-desc"&gt;${d.desc}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>${d.today&amp;&amp;d.type==='renfort'?`&lt;button class="action-btn" onclick="document.querySelectorAll('.nav-btn')[1].click()"&gt;Voir la séance détaillée →&lt;/button&gt;`:''}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="btn-grp" style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="dbtn-${d.id}" class="btn-done${isDone?' active':''}" onclick="markDay('${d.id}','done')"&gt;✓ Fait&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="sbtn-${d.id}" class="btn-skip${isSkip?' active':''}" onclick="markDay('${d.id}','skip')"&gt;✕ Sauté&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function buildSeance(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el=document.getElementById('seance-content');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let html=`&lt;div style="margin-bottom:14px"&gt;&lt;div style="font-size:16px;font-weight:700"&gt;${SEANCE.title}&lt;/div&gt;&lt;div style="font-size:12px;color:#888;margin-top:3px"&gt;${SEANCE.phase}&lt;/div&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>SEANCE.blocks.forEach(b=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html+=`&lt;div class="sec-title"&gt;${b.title}&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>b.exercises.forEach((ex,ei)=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html+=`&lt;div class="ex-card${ex.prio?' prio':''}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ex-top"&gt;&lt;span class="ex-nm"&gt;${ex.name}&lt;/span&gt;${ex.tag?`&lt;span class="ex-tag"&gt;${ex.tag}&lt;/span&gt;`:''}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ex-desc"&gt;${ex.desc}&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ex.sets.forEach((s,si)=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const id=`chk-${ei}-${si}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>html+=`&lt;div class="set-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="set-num"&gt;${s.num}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="set-tgt"&gt;${s.tgt}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>${s.inp?`&lt;input class="set-inp" type="text" placeholder="kg réel"&gt;`:``}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="set-chk" id="${id}" onclick="toggleCheck(this)"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(ex.rest) html+=`&lt;div class="rest"&gt;⏱ ${ex.rest}&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html+=`&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.innerHTML=html;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">buildWeek();</p>
+<p class="p1">buildSeance();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
