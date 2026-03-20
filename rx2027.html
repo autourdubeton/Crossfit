@@ -23,7 +23,7 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
 .day-card.today{border-color:#f4621f}
 .day-hdr{display:flex;align-items:center;padding:12px 14px;gap:10px;cursor:pointer}
 .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.dot-wod{background:#f4621f}.dot-renfort{background:#2196f3}.dot-coaching{background:#9c27b0}.dot-teamwod{background:#4caf50}.dot-repos{background:#555}.dot-echobike{background:#00bcd4}
+.dot-wod{background:#f4621f}.dot-renfort{background:#2196f3}.dot-coaching{background:#9c27b0}.dot-teamwod{background:#4caf50}.dot-repos{background:#555}
 .day-nm{font-weight:700;font-size:14px;flex:1}
 .day-dt{font-size:11px;color:#666}
 .day-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin-right:4px}
@@ -32,15 +32,17 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
 .b-coaching{background:rgba(156,39,176,.2);color:#ce93d8}
 .b-teamwod{background:rgba(76,175,80,.2);color:#4caf50}
 .b-repos{background:rgba(88,88,88,.15);color:#888}
-.b-echobike{background:rgba(0,188,212,.2);color:#00bcd4}
 .day-body{padding:0 14px 14px;display:none}
 .day-body.open{display:block}
 .day-desc{font-size:13px;color:#bbb;margin-bottom:12px;line-height:1.5}
-.btn-grp{display:flex;gap:8px}
+.btn-grp{display:flex;gap:8px;margin-bottom:10px}
 .btn-done{flex:1;padding:9px;border-radius:8px;border:1px solid #4caf50;background:rgba(76,175,80,.15);color:#4caf50;font-size:12px;font-weight:700;cursor:pointer}
 .btn-skip{flex:1;padding:9px;border-radius:8px;border:1px solid #f44336;background:rgba(244,67,54,.15);color:#f44336;font-size:12px;font-weight:700;cursor:pointer}
 .btn-done.active{background:#4caf50;color:#fff}
 .btn-skip.active{background:#f44336;color:#fff}
+.extras-label{font-size:11px;color:#666;margin-bottom:4px}
+.extras-input{width:100%;background:#222;border:1px solid #333;border-radius:8px;color:#f0f0f0;font-size:13px;padding:8px 10px;resize:none;min-height:60px}
+.extras-input:focus{outline:none;border-color:#f4621f}
 .sec-title{font-size:10px;font-weight:700;color:#666;letter-spacing:2px;text-transform:uppercase;margin:16px 0 8px}
 .ex-card{background:#1a1a1a;border-radius:12px;padding:14px;border:1px solid #2a2a2a;margin-bottom:10px}
 .ex-card.prio{border-color:#f4621f}
@@ -56,13 +58,12 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
 .set-chk{width:22px;height:22px;border-radius:6px;border:2px solid #444;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;transition:all .15s;color:transparent;user-select:none}
 .set-chk.chk{background:#4caf50;border-color:#4caf50;color:#fff}
 .rest{font-size:11px;color:#666;margin-top:6px;font-style:italic}
-.z2-card{background:#0a2530;border:1px solid #00bcd4;border-radius:12px;padding:14px;margin-bottom:10px}
-.z2-title{font-size:14px;font-weight:700;color:#00bcd4;margin-bottom:5px}
-.z2-desc{font-size:12px;color:#9ecdd4;line-height:1.5;margin-bottom:10px}
-.z2-stats{display:flex;gap:10px}
-.z2-stat{flex:1;background:rgba(0,188,212,.1);border-radius:8px;padding:8px;text-align:center}
-.z2-val{font-size:18px;font-weight:900;color:#00bcd4}
-.z2-lbl{font-size:10px;color:#667;margin-top:2px}
+.action-btn{width:100%;padding:12px;border-radius:10px;border:1px solid #f4621f;background:rgba(244,98,31,.1);color:#f4621f;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
+.resume-box{background:#111;border:1px solid #f4621f;border-radius:12px;padding:14px;margin-top:14px;display:none}
+.resume-box.show{display:block}
+.resume-title{font-size:13px;font-weight:700;color:#f4621f;margin-bottom:10px}
+.resume-row{font-size:12px;color:#ccc;padding:4px 0;border-bottom:1px solid #222;line-height:1.5}
+.resume-row:last-child{border-bottom:none}
 .prog-card{background:#1a1a1a;border-radius:12px;padding:14px;border:1px solid #2a2a2a;margin-bottom:10px}
 .pb-wrap{margin-bottom:10px}
 .pb-labels{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:4px}
@@ -75,7 +76,6 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
 .rm-row:last-child{border-bottom:none}
 .rm-lbl{color:#999}
 .rm-val{font-weight:700;color:#f4621f}
-.action-btn{width:100%;padding:12px;border-radius:10px;border:1px solid #f4621f;background:rgba(244,98,31,.1);color:#f4621f;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px}
 </style>
 </head>
 <body>
@@ -85,7 +85,7 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
     <div class="logo">ANTHONY <span>RX</span> 2027</div>
     <div class="phase">PHASE BASE</div>
   </div>
-  <div class="week-lbl">Semaine 1 — 17 au 22 mars 2026</div>
+  <div class="week-lbl" id="week-lbl"></div>
 </div>
 <div class="nav">
   <button class="nav-btn on" onclick="show('semaine',this)">SEMAINE</button>
@@ -93,10 +93,8 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
   <button class="nav-btn" onclick="show('prog',this)">PROGRESSION</button>
   <button class="nav-btn" onclick="show('profil',this)">PROFIL</button>
 </div>
-
 <div id="semaine" class="view on"><div id="week-grid"></div></div>
 <div id="seance" class="view"><div id="seance-content"></div></div>
-
 <div id="prog" class="view">
   <div class="prog-card">
     <div style="font-size:13px;font-weight:700;margin-bottom:12px">Plan 6 mois — Phase Base (semaine 1/8)</div>
@@ -129,7 +127,6 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
     </div>
   </div>
 </div>
-
 <div id="profil" class="view">
   <div class="sec-title">1RM de référence</div>
   <div class="prog-card">
@@ -149,149 +146,50 @@ body{background:#0d0d0d;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFo
     <div class="rm-row"><span class="rm-lbl">Pull-ups</span><span class="rm-val">✓</span></div>
     <div class="rm-row"><span class="rm-lbl">Chest-to-bar</span><span class="rm-val">✓</span></div>
     <div class="rm-row"><span class="rm-lbl">Toes-to-bar</span><span class="rm-val">✓</span></div>
-    <div class="rm-row"><span class="rm-lbl">Handstand walk</span><span class="rm-val">2–3 m</span></div>
-    <div class="rm-row"><span class="rm-lbl">Double-unders</span><span class="rm-val">Sets 20–30</span></div>
   </div>
 </div>
 </div>
-
 <script>
-const DAYS=[
-  {id:'lun',name:'Lundi',date:'17 mars',type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',done:true,today:false,
-   desc:'WOD du matin (7h avant déplacement). Fait !'},
-  {id:'mar',name:'Mardi',date:'18 mars',type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',done:true,today:false,
-   desc:'WOD 17h15 — 3 rounds : 400m run / 3 BMU / 21 DB snatch @ 17,5 kg. Temps : 13\'26. + 3 BMU unbroken en fin de séance !'},
-  {id:'mer',name:'Mercredi',date:'19 mars',type:'renfort',badge:'b-renfort',dot:'dot-renfort',label:'Renfort',done:false,today:true,
-   desc:'Séance renfort : Front Squat 5×5 @ 55 kg + Thruster technique + Strict Press + accessoire BMU. Voir onglet SÉANCE.'},
-  {id:'jeu',name:'Jeudi',date:'20 mars',type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',done:false,today:false,
-   desc:'WOD box. Note ton ressenti et tes zones FC après pour adapter la suite.'},
-  {id:'ven',name:'Vendredi',date:'21 mars',type:'coaching',badge:'b-coaching',dot:'dot-coaching',label:'Cours particulier',done:false,today:false,
-   desc:'Cours particulier. Focus suggéré : technique thruster + cycling BMU.'},
-  {id:'sam',name:'Samedi',date:'22 mars',type:'teamwod',badge:'b-teamwod',dot:'dot-teamwod',label:'Team WOD',done:false,today:false,
-   desc:'Team WOD avec Aurélie. Intensité libre — profite !'},
+const JOURS_FR=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const MOIS_FR=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+function getMonday(d){const date=new Date(d);const day=date.getDay();const diff=date.getDate()-day+(day===0?-6:1);date.setDate(diff);return date;}
+const today=new Date();
+const monday=getMonday(today);
+function addDays(date,days){const d=new Date(date);d.setDate(d.getDate()+days);return d;}
+function fmtDate(d){return d.getDate()+' '+MOIS_FR[d.getMonth()];}
+function isToday(d){return d.toDateString()===today.toDateString();}
+const weekDates=[0,1,2,3,4,5].map(i=>addDays(monday,i));
+document.getElementById('week-lbl').textContent='Semaine 1 — '+fmtDate(weekDates[0])+' au '+fmtDate(weekDates[5])+' '+weekDates[0].getFullYear();
+const PLAN=[
+  {type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',desc:'WOD box du lundi. Note ton temps et tes zones FC après.'},
+  {type:'repos',badge:'b-repos',dot:'dot-repos',label:'Repos / Déplacement',desc:'Jour de repos ou déplacement. Si tu as 20 min, vélo zone 2 possible.'},
+  {type:'wod',badge:'b-wod',dot:'dot-wod',label:'WOD Box',desc:'WOD box du mercredi.'},
+  {type:'renfort',badge:'b-renfort',dot:'dot-renfort',label:'Renfort',desc:'Séance renfort : Front Squat 5×5 @ 55 kg + Thruster technique + Strict Press + accessoire BMU. Voir onglet SÉANCE.'},
+  {type:'coaching',badge:'b-coaching',dot:'dot-coaching',label:'Cours particulier',desc:'Cours particulier. Focus : technique thruster + cycling BMU.'},
+  {type:'teamwod',badge:'b-teamwod',dot:'dot-teamwod',label:'Team WOD',desc:'Team WOD avec Aurélie. Intensité libre — profite !'},
 ];
-
-const SEANCE={
-  title:'Renfort — Mercredi 19 mars',
-  phase:'Phase Base · Semaine 1',
-  blocks:[
-    {title:'ÉCHAUFFEMENT',exercises:[
-      {name:'Echo bike zone 2',tag:null,prio:false,
-       desc:'10 min à FC cible 120–135 bpm. Cadence tranquille.',
-       sets:[{num:'—',tgt:'10 min @ 120–135 bpm',inp:false}]}
-    ]},
-    {title:'BLOC PRINCIPAL — JAMBES',exercises:[
-      {name:'Front Squat',tag:'PRIORITÉ',prio:true,
-       desc:'5×5 @ 65% = 55 kg. Repos 3 min. Focus : coudes hauts, profondeur.',
-       sets:[{num:'Set 1',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 2',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 3',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 4',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 5',tgt:'5 reps @ 55 kg',inp:true}],
-       rest:'Repos 3 min entre sets'},
-      {name:'Thruster technique',tag:null,prio:false,
-       desc:'4×4 @ 30 kg. Pas lourd — focus enchaînement squat→presse.',
-       sets:[{num:'Set 1',tgt:'4 reps @ 30 kg',inp:true},{num:'Set 2',tgt:'4 reps @ 30 kg',inp:true},{num:'Set 3',tgt:'4 reps @ 30 kg',inp:true},{num:'Set 4',tgt:'4 reps @ 30 kg',inp:true}],
-       rest:'Repos 2 min entre sets'},
-    ]},
-    {title:'POUSSÉE VERTICALE',exercises:[
-      {name:'Strict Press',tag:null,prio:false,
-       desc:'4×6 @ 60% = 30 kg. Mouvement strict, pas de coup de rein.',
-       sets:[{num:'Set 1',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 2',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 3',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 4',tgt:'6 reps @ 30 kg',inp:true}],
-       rest:'Repos 90 sec entre sets'},
-    ]},
-    {title:'ACCESSOIRE BMU',exercises:[
-      {name:'Transitions BMU',tag:null,prio:false,
-       desc:'5×3 transitions isolées. Travail du passage hanche → appui. Si tu te sens bien, tente 3 BMU unbroken en fin de bloc.',
-       sets:[{num:'Set 1',tgt:'3 transitions',inp:false},{num:'Set 2',tgt:'3 transitions',inp:false},{num:'Set 3',tgt:'3 transitions',inp:false},{num:'Set 4',tgt:'3 transitions',inp:false},{num:'Set 5',tgt:'3 transitions',inp:false}],
-       rest:'Repos 90 sec — qualité avant tout'},
-      {name:'Hollow body hold',tag:null,prio:false,
-       desc:'3×30 sec. Core pour soutenir les BMU.',
-       sets:[{num:'Set 1',tgt:'30 sec',inp:false},{num:'Set 2',tgt:'30 sec',inp:false},{num:'Set 3',tgt:'30 sec',inp:false}],
-       rest:'Repos 45 sec'},
-    ]},
-    {title:'ZONE 2 — FINISHER',exercises:[
-      {name:'Echo bike',tag:null,prio:false,
-       desc:'15–20 min @ 120–135 bpm. Récupération active.',
-       sets:[{num:'—',tgt:'15–20 min @ zone 2',inp:false}]}
-    ]},
-  ]
-};
-
-function show(id,btn){
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
-  document.getElementById(id).classList.add('on');
-  btn.classList.add('on');
-}
-
-function toggleDay(id){
-  document.getElementById('body-'+id).classList.toggle('open');
-}
-
-function markDay(id,status){
-  const d=document.getElementById('dbtn-'+id);
-  const s=document.getElementById('sbtn-'+id);
-  const dot=document.getElementById('dot-'+id);
-  if(status==='done'){d.classList.add('active');s.classList.remove('active');dot.style.boxShadow='0 0 0 2px #4caf50';}
-  else{s.classList.add('active');d.classList.remove('active');dot.style.boxShadow='0 0 0 2px #f44336';}
-  localStorage.setItem('day-'+id,status);
-}
-
-function toggleCheck(el){
-  el.classList.toggle('chk');
-  el.textContent=el.classList.contains('chk')?'✓':'';
-}
-
-function buildWeek(){
-  const grid=document.getElementById('week-grid');
-  DAYS.forEach(d=>{
-    const saved=localStorage.getItem('day-'+d.id);
-    const isDone=saved==='done'||d.done;
-    const isSkip=saved==='skip';
-    const card=document.createElement('div');
-    card.className='day-card'+(d.today?' today':'');
-    card.innerHTML=`
-      <div class="day-hdr" onclick="toggleDay('${d.id}')">
-        <div class="dot ${d.dot}" id="dot-${d.id}" style="${isDone?'box-shadow:0 0 0 2px #4caf50':isSkip?'box-shadow:0 0 0 2px #f44336':''}"></div>
-        <div class="day-nm">${d.name}${d.today?' <span style="font-size:10px;color:#f4621f">· Aujourd\'hui</span>':''}</div>
-        <div class="day-dt">${d.date}</div>
-        <span class="day-badge ${d.badge}">${d.label}</span>
-        <span style="font-size:13px">${isDone?'✅':isSkip?'⏭':'▸'}</span>
-      </div>
-      <div class="day-body${d.today?' open':''}" id="body-${d.id}">
-        <div class="day-desc">${d.desc}</div>
-        ${d.today&&d.type==='renfort'?`<button class="action-btn" onclick="document.querySelectorAll('.nav-btn')[1].click()">Voir la séance détaillée →</button>`:''}
-        <div class="btn-grp" style="margin-top:10px">
-          <button id="dbtn-${d.id}" class="btn-done${isDone?' active':''}" onclick="markDay('${d.id}','done')">✓ Fait</button>
-          <button id="sbtn-${d.id}" class="btn-skip${isSkip?' active':''}" onclick="markDay('${d.id}','skip')">✕ Sauté</button>
-        </div>
-      </div>`;
-    grid.appendChild(card);
-  });
-}
-
-function buildSeance(){
-  const el=document.getElementById('seance-content');
-  let html=`<div style="margin-bottom:14px"><div style="font-size:16px;font-weight:700">${SEANCE.title}</div><div style="font-size:12px;color:#888;margin-top:3px">${SEANCE.phase}</div></div>`;
-  SEANCE.blocks.forEach(b=>{
-    html+=`<div class="sec-title">${b.title}</div>`;
-    b.exercises.forEach((ex,ei)=>{
-      html+=`<div class="ex-card${ex.prio?' prio':''}">
-        <div class="ex-top"><span class="ex-nm">${ex.name}</span>${ex.tag?`<span class="ex-tag">${ex.tag}</span>`:''}</div>
-        <div class="ex-desc">${ex.desc}</div>`;
-      ex.sets.forEach((s,si)=>{
-        const id=`chk-${ei}-${si}`;
-        html+=`<div class="set-row">
-          <span class="set-num">${s.num}</span>
-          <span class="set-tgt">${s.tgt}</span>
-          ${s.inp?`<input class="set-inp" type="text" placeholder="kg réel">`:``}
-          <div class="set-chk" id="${id}" onclick="toggleCheck(this)"></div>
-        </div>`;
-      });
-      if(ex.rest) html+=`<div class="rest">⏱ ${ex.rest}</div>`;
-      html+=`</div>`;
-    });
-  });
-  el.innerHTML=html;
-}
-
+const SEANCE={blocks:[
+  {title:'ÉCHAUFFEMENT',exercises:[{name:'Vélo / Echo bike zone 2',tag:null,prio:false,desc:'10 min @ 120–135 bpm. Cadence tranquille.',sets:[{num:'—',tgt:'10 min @ zone 2',inp:false}]}]},
+  {title:'BLOC PRINCIPAL — JAMBES',exercises:[
+    {name:'Front Squat',tag:'PRIORITÉ',prio:true,desc:'5×5 @ 65% = 55 kg. Repos 3 min. Focus : coudes hauts, profondeur.',sets:[{num:'Set 1',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 2',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 3',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 4',tgt:'5 reps @ 55 kg',inp:true},{num:'Set 5',tgt:'5 reps @ 55 kg',inp:true}],rest:'Repos 3 min entre sets'},
+    {name:'Thruster technique',tag:null,prio:false,desc:'4×4 @ 35 kg. Focus enchaînement squat→presse.',sets:[{num:'Set 1',tgt:'4 reps @ 35 kg',inp:true},{num:'Set 2',tgt:'4 reps @ 35 kg',inp:true},{num:'Set 3',tgt:'4 reps @ 35 kg',inp:true},{num:'Set 4',tgt:'4 reps @ 35 kg',inp:true}],rest:'Repos 2 min entre sets'},
+  ]},
+  {title:'POUSSÉE VERTICALE',exercises:[
+    {name:'Strict Press',tag:null,prio:false,desc:'4×6 @ 30 kg. Mouvement strict, pas de coup de rein.',sets:[{num:'Set 1',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 2',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 3',tgt:'6 reps @ 30 kg',inp:true},{num:'Set 4',tgt:'6 reps @ 30 kg',inp:true}],rest:'Repos 90 sec entre sets'},
+  ]},
+  {title:'ACCESSOIRE BMU',exercises:[
+    {name:'Transitions BMU',tag:null,prio:false,desc:'5×3 transitions isolées. Passage hanche → appui.',sets:[{num:'Set 1',tgt:'3 transitions',inp:false},{num:'Set 2',tgt:'3 transitions',inp:false},{num:'Set 3',tgt:'3 transitions',inp:false},{num:'Set 4',tgt:'3 transitions',inp:false},{num:'Set 5',tgt:'3 transitions',inp:false}],rest:'Repos 90 sec — qualité avant tout'},
+    {name:'Hollow body hold',tag:null,prio:false,desc:'3×30 sec.',sets:[{num:'Set 1',tgt:'30 sec',inp:false},{num:'Set 2',tgt:'30 sec',inp:false},{num:'Set 3',tgt:'30 sec',inp:false}],rest:'Repos 45 sec'},
+  ]},
+  {title:'ZONE 2 — FINISHER',exercises:[{name:'Vélo / Echo bike',tag:null,prio:false,desc:'15–20 min @ 120–135 bpm. Récupération active.',sets:[{num:'—',tgt:'15–20 min @ zone 2',inp:false}]}]},
+]};
+function show(id,btn){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');btn.classList.add('on');}
+function toggleDay(id){document.getElementById('body-'+id).classList.toggle('open');}
+function markDay(id,status){const d=document.getElementById('dbtn-'+id);const s=document.getElementById('sbtn-'+id);const dot=document.getElementById('dot-'+id);if(status==='done'){d.classList.add('active');s.classList.remove('active');dot.style.boxShadow='0 0 0 2px #4caf50';}else{s.classList.add('active');d.classList.remove('active');dot.style.boxShadow='0 0 0 2px #f44336';}localStorage.setItem('day-'+id,status);}
+function toggleCheck(el){el.classList.toggle('chk');el.textContent=el.classList.contains('chk')?'✓':'';}
+function showResume(){const box=document.getElementById('resume-box');box.classList.toggle('show');if(!box.classList.contains('show'))return;let lines=[];document.querySelectorAll('.ex-card').forEach(card=>{const nm=card.querySelector('.ex-nm').textContent;const chks=card.querySelectorAll('.set-chk.chk');const inps=card.querySelectorAll('.set-inp');if(chks.length===0)return;let vals=[];inps.forEach(i=>{if(i.value)vals.push(i.value+'kg');});const charge=vals.length?' @ '+[...new Set(vals)].join('/') :'';lines.push(nm+' — '+chks.length+' sets cochés'+charge);});const extras=document.getElementById('extras-txt').value;if(extras)lines.push('Extras : '+extras);document.getElementById('resume-lines').innerHTML=lines.length?lines.map(l=>`<div class="resume-row">${l}</div>`).join(''):'<div class="resume-row" style="color:#666">Aucun set coché.</div>';}
+function buildWeek(){const grid=document.getElementById('week-grid');PLAN.forEach((p,i)=>{const date=weekDates[i];const id='day'+i;const saved=localStorage.getItem('day-'+id);const isDone=saved==='done';const isSkip=saved==='skip';const todayDay=isToday(date);const card=document.createElement('div');card.className='day-card'+(todayDay?' today':'');card.innerHTML=`<div class="day-hdr" onclick="toggleDay('${id}')"><div class="dot ${p.dot}" id="dot-${id}" style="${isDone?'box-shadow:0 0 0 2px #4caf50':isSkip?'box-shadow:0 0 0 2px #f44336':''}"></div><div class="day-nm">${JOURS_FR[date.getDay()]}${todayDay?' <span style="font-size:10px;color:#f4621f">· Aujourd\'hui</span>':''}</div><div class="day-dt">${fmtDate(date)}</div><span class="day-badge ${p.badge}">${p.label}</span><span style="font-size:13px">${isDone?'✅':isSkip?'⏭':'▸'}</span></div><div class="day-body${todayDay?' open':''}" id="body-${id}"><div class="day-desc">${p.desc}</div>${todayDay&&p.type==='renfort'?`<button class="action-btn" onclick="document.querySelectorAll('.nav-btn')[1].click()">Voir la séance détaillée →</button>`:''}<div class="btn-grp" style="margin-top:10px"><button id="dbtn-${id}" class="btn-done${isDone?' active':''}" onclick="markDay('${id}','done')">✓ Fait</button><button id="sbtn-${id}" class="btn-skip${isSkip?' active':''}" onclick="markDay('${id}','skip')">✕ Sauté</button></div><div class="extras-label">Extras / Notes</div><textarea class="extras-input" placeholder="V-ups, corde, ressenti..."></textarea></div>`;grid.appendChild(card);});}
+function buildSeance(){const el=document.getElementById('seance-content');const renfortDate=weekDates[3];let html=`<div style="margin-bottom:14px"><div style="font-size:16px;font-weight:700">Renfort — ${JOURS_FR[renfortDate.getDay()]} ${fmtDate(renfortDate)}</div><div style="font-size:12px;color:#888;margin-top:3px">Phase Base · Semaine 1</div></div>`;SEANCE.blocks.forEach(b=>{html+=`<div class="sec-title">${b.title}</div>`;b.exercises.forEach((ex,ei)=>{html+=`<div class="ex-card${ex.prio?' prio':''}"><div class="ex-top"><span class="ex-nm">${ex.name}</span>${ex.tag?`<span class="ex-tag">${ex.tag}</span>`:''}</div><div class="ex-desc">${ex.desc}</div>`;ex.sets.forEach((s,si)=>{const id=`chk-${ei}-${si}`;html+=`<div class="set-row"><span class="set-num">${s.num}</span><span class="set-tgt">${s.tgt}</span>${s.inp?`<input class="set-inp" type="text" placeholder="kg réel">`:`}`}<div class="set-chk" id="${id}" onclick="toggleCheck(this)"></div></div>`;});if(ex.rest)html+=`<div class="rest">⏱ ${ex.rest}</div>`;html+=`</div>`;});});html+=`<div class="extras-label" style="margin-top:8px">Extras / Notes libres</div><textarea class="extras-input" id="extras-txt" placeholder="V-ups, corde, ressenti, remarque coach..."></textarea><button class="action-btn" onclick="showResume()">Voir le résumé de la séance</button><div class="resume-box" id="resume-box"><div class="resume-title">Résumé séance — à partager</div><div id="resume-lines"></div></div>`;el.innerHTML=html;}
 buildWeek();
 buildSeance();
 </script>
